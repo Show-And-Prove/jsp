@@ -21,7 +21,6 @@
 		response.sendRedirect("login_ok.jsp");
 	}else{
 		//일치하지 않으면, loginForm.html로 이동
-		response.sendRedirect("loginForm.html");
 	}
 	
 

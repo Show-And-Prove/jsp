@@ -18,10 +18,9 @@
 		//만약, 아이디와 비밀번호가 맞으면, 로그인처리 후 login_ok.jsp로 이동
 		session.setAttribute("", id);
 		session.setAttribute("", pw);
-		response.sendRedirect("login_ok.jsp");
+		response.sendRedirect("login_ok.jsp")
 	}else{
 		//일치하지 않으면, loginForm.html로 이동
-		response.sendRedirect("loginForm.html");
 	}
 	
 
