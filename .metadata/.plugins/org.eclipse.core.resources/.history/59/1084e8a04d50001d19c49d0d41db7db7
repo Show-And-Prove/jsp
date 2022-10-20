@@ -24,7 +24,7 @@
 		session.setAttribute("id", id);
 		session.setAttribute("pw", pw);
 		response.addCookie(cookie);		//쿠키 추가
-		response.sendRedirect("login_ok.jsp");		
+		response.sendRedirect("login_ok.jsp");
 	}else{
 		//일치하지 않으면, loginForm.html로 이동
 		response.sendRedirect("loginForm.html");

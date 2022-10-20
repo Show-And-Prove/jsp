@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test06 : jsp - java 객체제어</title>
+</head>
+<body>
+<%
+	List<String> lst = new ArrayList<>();
+	lst.add("null");
+	lst.add("null2");
+	lst.add("null3");
+	lst.add("null4");
+	request.setAttribute("lst", lst);
+	
+	Set<String> set = new HashSet<>();
+	set.add("1");
+	set.add("2");
+	set.add("3");
+	set.add("4");
+	set.add("5");
+	request.setAttribute("set", set);
+	
+	Map map = new HashMap();
+	map.put("test1", "q");
+	map.put("test2", "w");
+	map.put("test3", "e");
+	map.put("test4", "r");
+	
+	
+	
+%>
+</body>
+</html>
