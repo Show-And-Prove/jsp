@@ -1,0 +1,63 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.text.*, java.net.InetAddress" %>	<!--  -->
+<%@ page import="com.example.* " %>	<!--  -->
+<%@ include file="common.jsp" %>	<!--  -->
+<%--  <%@ taglib prefix="접두사" uri="URI" %>   --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>	<!-- 접두사 c >> core // 접두사 fmt >> format -->
+<%
+	
+	
+
+	Human h1 = new Human();
+	h1.setCountry("Korean");
+	h1.setName("김기태");
+	h1.setAge(37);
+	h1.setHobby("문화탐방");
+	
+
+	List <Human> hList = new ArrayList<Human>();
+	
+	
+	Human h2 = new Human();
+	h2.setCountry("American");
+	h2.setName("안효준");
+	h2.setAge(18);
+	h2.setHobby("영화감상");
+	
+	hList.add(h1);
+	hList.add(h2);
+	
+	request.setAttribute("hList", hList);
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>04Expression OR EL</title>
+</head>
+<body>
+<h3>ArrayList+pageContext+EL</h3>
+<table border="1" cellpadding="10" cellspacing="0">
+<%
+	if(hList != null){
+		for(Human human : hList){
+			pageContext.setAttribute("human", human);
+%>
+	<tr>
+		<td>${hList[i].country }</td>
+		<td>${hList[i].name }</td>
+		<td>${hList[i].age }</td>
+		<td>${hList[i].hobby }</td>
+	</tr>
+<%
+	}
+}
+%>
+</table>
+
+</body>
+</html>

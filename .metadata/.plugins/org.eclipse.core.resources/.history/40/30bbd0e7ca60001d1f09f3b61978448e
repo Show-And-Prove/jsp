@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>usebean 액션태그를 활용하여 클래스에 데이터 담기</h2>
+
+<jsp:useBean id="b" scope="request" class="com.example.Human" />
+<%
+	b.setName("asdf");
+	b.setCountry("중국");
+	b.setAge(999);
+	b.setHobby("tnatnlrl");
+%>
+<h2>forward 액션태그를 활용한 데이터 전달</h2>
+<jsp:useBean page="07HumanUseBean.jsp" />
+
+</body>
+</html>
